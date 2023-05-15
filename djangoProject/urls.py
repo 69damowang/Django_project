@@ -17,6 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from app01 import views
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+
+    path('index/',views.index) , #进入index后，执行后面的函数
+    path('user/list/',views.user_list),
+    path('user/add/',views.user_add),
+
+
+    #用户登录
+    path('login/',views.login),
+
+    #案例：用户管理
+    path('info/list/',views.info_list),
+    path('info/add/',views.info_add),
+    path('info/delete/',views.info_delete)
+
 ]
